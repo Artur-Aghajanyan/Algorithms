@@ -1,0 +1,19 @@
+<script>
+    let arr = new Array(5,15,78,2,1,36,3,7,9,10);
+    let oldArr = [...arr];
+
+    //Befor sorting
+    console.log(oldArr);
+
+    for(let i = 0; i < arr.length-1; ++i){
+        for(let j = 0; j < arr.length-i-1; ++j) {
+            if(arr[j+1] < arr[j]) {
+                let tmp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = tmp;
+            }
+        }
+    }
+    // After sorting
+    console.log(arr);
+</script>
