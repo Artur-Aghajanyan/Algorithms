@@ -1,0 +1,20 @@
+<script>
+
+let arr = new Array(5,15,78,2,1,36,3,7,9,10);
+let oldArr = [...arr];
+// Before sorting
+console.log(oldArr);
+
+for(let i = 1; i < arr.length; ++i) {
+    let j = i-1;
+    let p = arr[i];
+    while (j >= 0 && p < arr[j]) {
+        arr[j+1] = arr[j];
+        j--; 
+    }
+    arr[j+1] = p;
+    
+}
+// After sorting
+console.log(arr);   
+</script>
