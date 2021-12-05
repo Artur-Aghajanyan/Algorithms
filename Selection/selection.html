@@ -1,0 +1,23 @@
+<script>
+
+let arr = new Array(5,15,78,2,1,36,3,7,9,10);
+let oldArr = [...arr];
+// Before sorting
+console.log(oldArr);
+
+for(let i = 0; i < arr.length-1; ++i) {
+    let minIndex = i; 
+    for(let j = i+1; j < arr.length; ++j) {
+        if(arr[minIndex] > arr[j]) {
+            minIndex = j;
+        }
+    }
+    let tmp = arr[i];
+    arr[i] = arr[minIndex];
+    arr[minIndex] = tmp;
+}
+
+// After sorting
+console.log(arr);
+
+</script>
