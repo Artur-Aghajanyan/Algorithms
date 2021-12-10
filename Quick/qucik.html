@@ -1,0 +1,29 @@
+<script>
+    function quick(arr, l, r) {
+        for(let i = 0; i < r; ++i){
+            if(arr[i] < arr[r]){
+                let temp = arr[i];
+                arr[i] = arr[l];
+                arr[l] = temp;
+                l++;
+            }
+        }
+        let temp = arr[r];
+        arr[r] = arr[l];
+        arr[l] = temp;
+        return l;
+    }
+
+    function quickSort(arr, start, end) {
+        if(start < end){
+            let index = quick(arr, start, end);
+            quickSort(arr, start, index-1);
+            quickSort(arr, index+1, end);
+        }
+    }
+    let array = new Array(12,1,3,5,4,9,8,7);
+    let newArray = [...array];
+    console.log(newArray);
+    quick(array, 0, array.length-1);
+    console.log(array);
+</script>
