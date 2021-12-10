@@ -15,12 +15,6 @@ int shellSort(int arr[], int n){
     return 0;
 }
  
-void printArray(int arr[], int n){
-    for (int i=0; i<n; i++)
-        std::cout << arr[i] << " ";
-
-}
- 
 int main(){
     int arr[] = {12, 34, 54, 2, 3}, i;
     int size = sizeof(arr)/sizeof(arr[0]);
