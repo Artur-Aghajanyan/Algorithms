@@ -1,0 +1,28 @@
+<script>
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let item = 5;
+
+    let index = jump_Search(arr, arr.length, item);
+    (index>=0) 
+        ? console.log("found at location: " + index)
+        : console.log("Item is not found in the list.");
+
+
+    function jump_Search(arr, n, item) {
+    let i = 0;
+    let m = Math.floor(Math.sqrt(n));
+
+    while(arr[m] <= item && m < n) {
+        i = m;
+        m += Math.floor(Math.sqrt(n));
+        if(m > n - 1)
+            return -1; 
+    }
+
+    for(let x = i; x<m; x++) {
+        if(arr[x] == item)
+            return x;
+    }
+    return -1;
+}
+</script>
